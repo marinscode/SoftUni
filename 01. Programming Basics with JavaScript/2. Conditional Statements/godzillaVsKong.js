@@ -1,12 +1,12 @@
 function godzillaVsKong(input) {
     let budget = Number(input[0]);
-    let statistes = Number(input[1]);
+    let staff = Number(input[1]);
     let priceDressOfStatist = Number(input[2]);
 
     let decorPrice = budget * 0.1;
-    let dressesPrice = statistes * priceDressOfStatist;
+    let dressesPrice = staff * priceDressOfStatist;
 
-    if(statistes > 150) {
+    if(staff > 150) {
         dressesPrice *= 0.9;
     } 
 
