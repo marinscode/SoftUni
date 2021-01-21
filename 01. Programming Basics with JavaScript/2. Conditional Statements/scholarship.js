@@ -25,7 +25,4 @@ function scholarship(input) {
 
 }
 
-scholarship(["300.00",
-    "5.65",
-    "420.00"])
-    ;
+scholarship(["300.00","5.65","420.00"]);
