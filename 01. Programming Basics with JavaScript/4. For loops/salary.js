@@ -2,7 +2,7 @@ function salary(input) {
     let n = Number(input[0]);
     let salary = Number(input[1]);
 
-    for (let i = 2; i <= n; i++){
+    for (let i = 2; i < input.length; i++){
         if(input[i] == 'Facebook') {
             salary -= 150;
         } else if (input[i] == 'Instagram') {
