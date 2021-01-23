@@ -3,7 +3,7 @@ function cardGame(input) {
     let cards = [];
     let card = [];
     let power = '';
-    let type = [];
+    let type = '';
     let resultArray = [];
 
     for (let line of input) {
