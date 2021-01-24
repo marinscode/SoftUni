@@ -4,7 +4,7 @@ function oldBooks(input) {
     let lastWord = '';
 
     while (input[index] !== 'No More Books') {
-        if ( input[index] == book) {
+        if (input[index] == book) {
             console.log(`You checked ${index} books and found it.`);
             break;
         }
@@ -12,7 +12,7 @@ function oldBooks(input) {
         lastWord = input[index];
     }
 
-    if(lastWord == 'No More Books') {
+    if (lastWord == 'No More Books') {
         console.log('The book you search is not here!');
         console.log(`You checked ${index} books.`);
     }
@@ -20,14 +20,14 @@ function oldBooks(input) {
 }
 
 oldBooks(["Bourne",
-"True Story",
-"Forever",
-"More Space",
-"The Girl",
-"Spaceship",
-"Strongest",
-"Profit",
-"Tripple",
-"Stella",
-"The Matrix",
-"Bourne"]);
+    "True Story",
+    "Forever",
+    "More Space",
+    "The Girl",
+    "Spaceship",
+    "Strongest",
+    "Profit",
+    "Tripple",
+    "Stella",
+    "The Matrix",
+    "Bourne"]);
