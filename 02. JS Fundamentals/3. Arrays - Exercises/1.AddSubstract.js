@@ -3,13 +3,14 @@ function solve(array) {
     let sumOrgArr = 0;
     let sumFinalArr = 0;
     for (let i = 0; i < array.length; i++) {
-        sumOrgArr += array[i];
         let modifyNum = array[i];
         if (array[i] % 2 === 0) {
             modifyNum = array[i] + i;
         } else {
             modifyNum = array[i] - i;
         }
+
+        sumOrgArr += array[i];
         sumFinalArr += modifyNum;
 
         resultArr.push(modifyNum);
