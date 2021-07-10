@@ -17,7 +17,7 @@ function solve(stocksArr, ordersArr) {
         }
     }
 
-    for(let stock in result) {
+    for (let stock in result) {
         console.log(`${stock} -> ${result[stock]}`);
     }
 }
