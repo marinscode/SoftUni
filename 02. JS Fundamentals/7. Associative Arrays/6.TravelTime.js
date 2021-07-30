@@ -3,22 +3,33 @@ function solve(arr) {
 
     for (let line of arr) {
         let [country, town, travelCost] = line.split(" > ");
-        if (!result.hasOwnProperty(country)) {
-            result[country] = [{
-                town: town,
-                travelCost: Number(travelCost)
-            }];
-        } else {
-            if(!result[country].includes(town)) {
-                result[country].push({town: town, travelCost: Number(travelCost)});
-            } else {
-                console.log('ddd');
-            }
+
+        //country does not exist
+        if (!Object.keys(result).includes(country)) {
+            result[country] = {};
+        }
+
+        //country exists
+        // town does not exist
+        if (!Object.keys(result[country]).includes(town)) {
+            result[country][town] = Number(travelCost);
+        }
+
+        // town exists
+        if (Number(travelCost) < result[country][town]) {
+            result[country][town] = Number(travelCost);
         }
 
     }
 
-    console.log(result);
+    let sortedCountries = Object
+        .entries(result)
+        .sort((a, b) => a[0].localeCompare(b[0]));
+
+    for (let [country, towns] of sortedCountries) {
+        let townAsEntries = Object.entries(towns).map(x => `${x[0]} -> ${x[1]}`);
+        console.log(`${country} -> ${townAsEntries.join(' ')}`);
+    }
 }
 
 solve([

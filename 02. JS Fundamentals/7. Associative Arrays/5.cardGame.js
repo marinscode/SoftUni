@@ -1,5 +1,5 @@
 function cardGame(input) {
-    let people = {};
+    let players = {};
     let cards = [];
     let card = [];
     let power = '';
@@ -7,25 +7,25 @@ function cardGame(input) {
     let resultArray = [];
 
     for (let line of input) {
-        let input = line.split(': ');
-        let name = input[0];
-        cards = input[1].split(', ');
-        if (!people[name]) {
-            people[name] = cards.toString();
+        let tokens = line.split(': ');
+        let name = tokens[0];
+        cards = tokens[1].split(', ');
+        if (!players[name]) {
+            players[name] = cards.toString();
         } else {
-            people[name] += ',' + cards;
+            players[name] += ',' + cards;
         }
     }
 
-    for (let obj in people) {
-        let set = new Set(people[obj].split(','));
+    for (let obj in players) {
+        let set = new Set(players[obj].split(','));
         cards = Array.from(set);
-        people[obj] = cards;
+        players[obj] = cards;
     }
 
-    for (let key in people) {
+    for (let key in players) {
         let sum = 0;
-        resultArray = people[key];
+        resultArray = players[key];
         for (let i = 0; i < resultArray.length; i++) {
             card = resultArray[i].split("");
             type = card.pop();
