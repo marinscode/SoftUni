@@ -4,8 +4,8 @@ function solve(text) {
 
     for(let word of words) {
         if(word[0] == '#' && word.length > 1) {
-            if(isValidWord(word.slice(1))) {
-                result.push(word.slice(1));
+            if(isValidWord(word.substring(1))) {
+                result.push(word.substring(1));
             }
         }
     }
